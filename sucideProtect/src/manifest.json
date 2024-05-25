@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Suicide Prevention Alert",
+  "version": "1.0",
+  "description": "Alerts you when suicide-related keywords are detected on a webpage or typed.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "notifications"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
